@@ -5,6 +5,3 @@ Client <connected>
 TickTackToe <new GameFrame>
 GameFrame <start game>
 GameFrame <open login panel>
-LoginPanel <login button pressed>
-LoginPanel <request to server = true>
-GameFrame <open main menu>

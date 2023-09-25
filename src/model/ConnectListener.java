@@ -10,6 +10,7 @@ public class ConnectListener extends Thread {
 	private UserList userList; // List of users
 	private GameList gameList; // List of games
 
+//	It initializes the member variables with the provided parameters
 	public ConnectListener(ServerSocket serverSocket, UserList userList, GameList gameList) {
 		this.userList = userList;
 		this.gameList = gameList;
@@ -17,6 +18,9 @@ public class ConnectListener extends Thread {
 		this.serverSocket = serverSocket;
 	}
 
+//	The run() method is overridden from the Thread class.
+//	It is the entry point for the thread and contains the logic for monitoring incoming client connections.
+//	It runs in a loop until the serverIsWork flag is set to false.
 	@Override
 	public void run() {
 		try {
@@ -33,11 +37,13 @@ public class ConnectListener extends Thread {
 		}
 	}
 
+//	The startUser() method is responsible for starting a new thread to handle a specific client connection.
 	public void startUser(Socket clientSocket) throws IOException {
 		LoginProtocol loginProtocol = new LoginProtocol(clientSocket, this.userList, this.gameList);
 		loginProtocol.start(); // Start a new thread to handle the login protocol for the client
 	}
 
+//	The stopWork() method is used to stop the server and clean up resources.
 	public void stopWork() throws IOException {
 		serverIsWork = false; // Stop the server
 		serverSocket.close(); // Close the server socket
