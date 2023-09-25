@@ -1,0 +1,109 @@
+Server <start>
+Server <load user list from: src/server_data/user_list.txt>
+Server <start connect listener>
+ConnectListener <waiting...>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: Nickname>
+LoginProtocol <game start protocol>
+GameStartProtocol <Nickname get request>
+GameStartProtocol <connect to game>
+GameStartProtocol <Nickname get request>
+GameStartProtocol <get rating>
+GameStartProtocol <Nickname get request>
+GameStartProtocol <sign out>
+LoginProtocol <get request>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.LoginProtocol.run(LoginProtocol.java:69)
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.LoginProtocol.run(LoginProtocol.java:69)
+Exception in thread "Thread-2" java.lang.NullPointerException: Cannot invoke "model.User.setOnline(boolean)" because "this.user" is null
+	at model.LoginProtocol.run(LoginProtocol.java:86)
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.LoginProtocol.run(LoginProtocol.java:69)
+Exception in thread "Thread-3" java.lang.NullPointerException: Cannot invoke "model.User.setOnline(boolean)" because "this.user" is null
+	at model.LoginProtocol.run(LoginProtocol.java:86)
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: Nickname>
+LoginProtocol <game start protocol>
+GameStartProtocol <Nickname get request>
+GameStartProtocol <new game>
+GameModel <opponent waiting>
+GameModel <stop opponent waiting>
+GameModel <IOException opponent waiting>
+java.net.SocketException: Connection reset by peer
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:418)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:438)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:817)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1120)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1115)
+	at java.base/java.io.DataOutputStream.writeBoolean(DataOutputStream.java:145)
+	at model.GameModel$2.run(GameModel.java:80)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+GameStartProtocol <Nickname get request>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:320)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.GameStartProtocol.getRequest(GameStartProtocol.java:27)
+	at model.LoginProtocol.run(LoginProtocol.java:80)
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: Nickname>
+LoginProtocol <game start protocol>
+GameStartProtocol <Nickname get request>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.GameStartProtocol.getRequest(GameStartProtocol.java:27)
+	at model.LoginProtocol.run(LoginProtocol.java:80)
