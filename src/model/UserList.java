@@ -3,6 +3,8 @@ package model;
 import java.util.*;
 import java.io.*;
 
+/*This code implements the user list management functionality, including operations such as adding, removing, and finding users, checking if a user exists, and loading and saving user list data.
+It also provides an overridden toString() method to convert the user list to a string representation if needed.*/
 public class UserList {
 	private ArrayList<User> list;
 	
