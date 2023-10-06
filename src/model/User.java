@@ -60,7 +60,8 @@ public class User {
 		}
 		return false;
 	}
-	
+
+//	override the toString() method to return a string representation of the user object, including nickname, password, rating and number of games played.
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
