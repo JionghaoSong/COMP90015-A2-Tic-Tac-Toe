@@ -34,7 +34,7 @@ public class FieldPanel extends JPanel {
 						if (gameProtocol.getIsWin() || gameProtocol.getOpponentIsWin() || gameProtocol.isOpponentDisconnect()) {
 							break;
 						} else if (gameProtocol.isTimeUp()) {
-							JOptionPane.showMessageDialog(null, "Draw\n Time is over", "", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "TIE\nTime is over", "", JOptionPane.INFORMATION_MESSAGE);
 							break;
 						}
 					} catch (IOException e) {

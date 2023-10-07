@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.*;
@@ -15,6 +16,7 @@ public class GameFrame extends Thread {
 	private GameStartPanel gameStartPanel;
 	private GameProtocol gameProtocol;
 	private String figure;
+	private String enemyFigure;
 	private String ip;
 	
 	public GameFrame(Socket socket) throws IOException {
@@ -35,6 +37,7 @@ public class GameFrame extends Thread {
 			System.err.println("GameFrame <start game>");
 
 			for (;;) {
+				/*авторизация*/
 				System.err.println("GameFrame <open login panel>");
 				frame.getContentPane().removeAll();
 				frame.getContentPane().add(loginPanel);
@@ -49,6 +52,7 @@ public class GameFrame extends Thread {
 				}
 				
 				for (;;) {
+					/*главное меню*/
 					System.err.println("GameFrame <open main menu>");
 					gameStartPanel = new GameStartPanel(socket, nickname);
 					frame.getContentPane().removeAll();
@@ -57,9 +61,11 @@ public class GameFrame extends Thread {
 
 					int menuParametr = mainMenu();
 					if (menuParametr == Constants.SIGN_OUT) {
+						/*разлогиниться*/
 						System.err.println("GameFrame <logout>");
 						break;
 					} else if (menuParametr == Constants.NEW_GAME) {
+						/*ожидание подключения игрока*/
 						System.err.println("GameFrame <open opponent waiting panel>");
 						waitingPanel = new WaitingPanel(socket);
 						frame.getContentPane().removeAll();
@@ -68,8 +74,10 @@ public class GameFrame extends Thread {
 
 						int waitParametr = opponentWaiting();
 						if (waitParametr == Constants.STOP_WAITING) {
+							/*перестать ждать противника*/
 							System.err.println("GameFrame <close opponent waiting panel>");
 						} else if (waitParametr == Constants.OPPONENT_FOUND) {
+							/*противник найден*/
 							System.err.println("GameFrame <opponent found>");
 							frame.setVisible(false);
 							String figure = figureChoice();
@@ -90,6 +98,7 @@ public class GameFrame extends Thread {
 							chatPanel.chatStop();
 						}
 					} else if (menuParametr == Constants.CONNECT_TO_GAME) {
+						/*подключиться к игре*/
 						System.err.println("GameFrame <connect to game>");
 						frame.setVisible(false);
 						String figure = figureChoice();
@@ -178,12 +187,16 @@ public class GameFrame extends Thread {
 	public String getFigure() {
 		return figure;	
 	}
-
+	
+	public String getEnemyFigure() {
+		return enemyFigure;
+	}
+	
 	private String figureChoice() {
 		figure = Constants.NOT_FIGURE;
 		JFrame frameChoice = new JFrame("Choice of figure");
 		frameChoice.setResizable(false);
-		frameChoice.setBounds(frame.getX() + 200, frame.getY() + 50, 200, 100);
+		frameChoice.setBounds(frame.getX() + 200, frame.getY() + 50, 200, 60);
 		//frameChoice.setPreferredSize(new Dimension(200, 60));
 		
 		JButton circleButton = new JButton();

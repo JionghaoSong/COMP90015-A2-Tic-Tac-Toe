@@ -5,10 +5,13 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 
 public class Constants {
-	public static final int FRAME_WIDTH 		= 550;
-	public static final int FRAME_HEIGHT	 	= 350;
-	public static final int FIELD_HEIGHT 		= 3;
-	public static final int FIELD_WIDTH 		= 3;
+	public static final int GAME_LIMIT			= 300;
+	public static final int FIELD_W_SIZE 		= 300;
+	public static final int FIELD_H_SIZE 		= 300;
+	public static final int FRAME_WIDTH 		= 530;
+	public static final int FRAME_HEIGHT	 	= 330;
+	public static final int FIELD_HEIGHT 		= 10;
+	public static final int FIELD_WIDTH 		= 10;
 	public static final int PORT		  		= 10000;
 	public static final String DEFAULT_IP 		= "127.0.0.1";
 	public static 		String DIR 				= "";
@@ -21,7 +24,11 @@ public class Constants {
 	public static final int NEW_GAME			= 1;
 	public static final int CONNECT_TO_GAME		= 2;
 	public static final int NOTHING				= 3;
+	public static final int CIRCLE 				= 4;
+	public static final int CROSS 				= 5;
+	public static final int GO_TO_BACK			= 6;
 	public static final int STOP_WAITING	 	= 7;
+	public static final int OVER_TIME	 		= 8;
 	public static final int OPPONENT_FOUND 		= 9;
 	public static final int GET_RATING_LIST		= 10;
 	public static final String EXIT				= "exit";

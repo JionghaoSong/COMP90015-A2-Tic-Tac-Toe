@@ -73,6 +73,10 @@ public class Server {
 		this.connectListener.stopWork();
 	}
 	
+	public UserList getUserList() {
+		return this.userList;
+	}
+	
 	public static void main(String[] args) {
 		try {
 			System.setErr(new PrintStream(new File(Constants.LOG_FILE_DIR)));
