@@ -75,9 +75,9 @@ public class ChatPanel extends JPanel {
 		this.timer = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				timeLabel.setText("09:58");
+				timeLabel.setText("00:20");
 				updateUI();
-				for (int i = 0; i < 598; i++) {
+				for (int i = 0; i < 21; i++) {
 					try { Thread.sleep(1000); } catch (InterruptedException e) {}
 					int min = time / 60;
 					int sec = time % 60;

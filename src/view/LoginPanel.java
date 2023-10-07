@@ -32,65 +32,38 @@ public class LoginPanel extends JPanel {
 		
 		messageLabel = new JLabel();
 		messageLabel.setFont(font);
-		messageLabel.setText("Welcome to TIC TAC TOE");
-		messageLabel.setForeground(new Color(0, 51, 102));
-		messageLabel.setBounds(2, 2, 500, 50);
+		messageLabel.setText("Ultimate Tic Tac Toe Experience");
+		messageLabel.setForeground(new Color(0, 153, 153));
+		messageLabel.setBounds(35, 25, 500, 50);
 		
-		JLabel nicknameLabel = new JLabel("Nickname:");
-		nicknameLabel.setBounds(2, 55, 120, 20);
+		JLabel nicknameLabel = new JLabel("Username:");
+		nicknameLabel.setBounds(130, 90, 120, 20);
 		nicknameLabel.setFont(labelFont);
-		
+
 		JTextField nicknameTextField = new JTextField();
-		nicknameTextField.setBounds(130, 55, 130, 20);
-		nicknameTextField.setText("Nickname");
-		
-		JLabel nicknameNote = new JLabel("(5-8 chars without spaces)");
-		nicknameNote.setForeground(new Color(153, 153, 255));
-		nicknameNote.setBounds(270, 55, 220, 20);
+		nicknameTextField.setBounds(250, 90, 130, 20);
+
+//		JLabel nicknameNote = new JLabel("(3-8 letters)");
+//		nicknameNote.setForeground(new Color(153, 153, 255));
+//		nicknameNote.setBounds(260, 90, 220, 20);
 		
 		JLabel passwordLabel = new JLabel("Password:");
-		passwordLabel.setBounds(2, 75, 120, 20);
+		passwordLabel.setBounds(130, 125, 120, 20);
 		passwordLabel.setFont(labelFont);
 		
 		JPasswordField passwordTextField = new JPasswordField();
-		passwordTextField.setBounds(130, 77, 130, 20);
-		passwordTextField.setText("Password");
+		passwordTextField.setBounds(250, 125, 130, 20);
+//		passwordTextField.setText("3-8 letters");
 		
-		JLabel passwordNote = new JLabel("(5-8 chars without spaces)");
-		passwordNote.setForeground(new Color(153, 153, 255));
-		passwordNote.setBounds(270, 75, 220, 20);
+//		JLabel passwordNote = new JLabel("(3-8 letters)");
+//		passwordNote.setForeground(new Color(105, 153, 255));
+//		passwordNote.setBounds(260, 125, 220, 20);
 		
 		JButton loginButton = new JButton("Sign in");
-		loginButton.setBounds(150, 110, 110, 25);
-		loginButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					System.err.println("LoginPanel <login button pressed>");
-					nickname = nicknameTextField.getText();
-					//System.out.println(nickname);
-					nicknameTextField.setText("");
-					password = passwordTextField.getText();
-					//System.out.println(password);
-					passwordTextField.setText("");
-					if (!inputIsCorrect(nickname, password)) {
-						/*некорректный ввод*/
-						System.err.println("LoginPanel <incorrect input>");
-						JOptionPane.showMessageDialog(null, "Login or password incorrect", "WARNING", JOptionPane.WARNING_MESSAGE);
-					} else {
-						/*запрос на сервер*/
-						isLogin = loginProtocol.send("login", nickname, password);
-						System.err.println("LoginPanel <request to server = " + isLogin + ">");
-					}
-				} catch (IOException err) {
-					System.err.println("LoginPanel <logButton.IOException>");
-					err.printStackTrace();
-				}
-			}
-		});
-		
-		JButton registrationButton = new JButton("Registration");
-		registrationButton.setBounds(2, 110, 130, 25);
+		loginButton.setBounds(270, 165, 110, 25);
+
+		JButton registrationButton = new JButton("Sign up");
+		registrationButton.setBounds(130, 165, 110, 25);
 		registrationButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -101,11 +74,9 @@ public class LoginPanel extends JPanel {
 					password = passwordTextField.getText();
 					passwordTextField.setText("");
 					if (!inputIsCorrect(nickname, password)) {
-						/*некорректный ввод*/
 						System.err.println("LoginPanel <incorrect input>");
-						JOptionPane.showMessageDialog(null, "Login or password incorrect", "WARNING", JOptionPane.WARNING_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Input 3-8 letters", "WARNING", JOptionPane.WARNING_MESSAGE);
 					} else {
-						/*запрос на сервер*/
 						System.err.println("LoginPanel <request to server>");
 						isRegistration = loginProtocol.send("registration", nickname, password);
 						if (!isRegistration) {
@@ -121,20 +92,45 @@ public class LoginPanel extends JPanel {
 				}
 			}
 		});
+
+		loginButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					System.err.println("LoginPanel <login button pressed>");
+					nickname = nicknameTextField.getText();
+					//System.out.println(nickname);
+					nicknameTextField.setText("");
+					password = passwordTextField.getText();
+					//System.out.println(password);
+					passwordTextField.setText("");
+					if (!inputIsCorrect(nickname, password)) {
+						System.err.println("LoginPanel <incorrect input>");
+						JOptionPane.showMessageDialog(null, "Login or password incorrect", "WARNING", JOptionPane.WARNING_MESSAGE);
+					} else {
+						isLogin = loginProtocol.send("login", nickname, password);
+						System.err.println("LoginPanel <request to server = " + isLogin + ">");
+					}
+				} catch (IOException err) {
+					System.err.println("LoginPanel <logButton.IOException>");
+					err.printStackTrace();
+				}
+			}
+		});
 		
 		super.add(messageLabel);
 		super.add(nicknameLabel);
 		super.add(nicknameTextField);
-		super.add(nicknameNote);
+//		super.add(nicknameNote);
 		super.add(passwordLabel);
 		super.add(passwordTextField);
-		super.add(passwordNote);
+//		super.add(passwordNote);
 		super.add(loginButton);
 		super.add(registrationButton);
 	}
 	
 	public boolean inputIsCorrect(String nickname, String password) {
-		if (nickname.length() <= 5 || nickname.length() > 8 || password.length() <= 5 || password.length() > 8) {
+		if (nickname.length() <= 2 || nickname.length() > 8 || password.length() <= 2 || password.length() > 8) {
 			return false;
 		}
 		if (nickname.contains(" ")) {

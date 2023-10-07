@@ -231,7 +231,7 @@ public class GameProtocol {
     }
 
     private boolean winCheck(int num, int x, int y) {
-        int max = 5;                         // Maximum length of winning sequence
+        int max = 3;                         // Maximum length of winning sequence
         int up = 0;                          // Counter for cells in the upward direction
         int down = 0;                        // Counter for cells in the downward direction
         int left = 0;                        // Counter for cells in the left direction

@@ -5,3 +5,24 @@ Client <connected>
 TickTackToe <new GameFrame>
 GameFrame <start game>
 GameFrame <open login panel>
+LoginPanel <registration button pressed>
+LoginPanel <incorrect input>
+LoginPanel <registration button pressed>
+LoginPanel <incorrect input>
+LoginPanel <login button pressed>
+LoginProtocol <error to login>
+LoginPanel <request to server = false>
+LoginPanel <login button pressed>
+LoginProtocol <error to login>
+LoginPanel <request to server = false>
+LoginPanel <registration button pressed>
+LoginPanel <request to server>
+LoginPanel <successful registration>
+GameFrame <open main menu>
+GameStartProtocol <logout>
+GameFrame <logout>
+GameFrame <open login panel>
+LoginPanel <registration button pressed>
+LoginPanel <request to server>
+LoginPanel <successful registration>
+GameFrame <open main menu>
