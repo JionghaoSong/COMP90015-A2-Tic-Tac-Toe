@@ -28,7 +28,6 @@ public class WaitingPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					/*отправить серверу отмену ожидания*/
 					out.writeBoolean(true);
 				} catch (IOException err) {
 					err.printStackTrace();
@@ -56,8 +55,6 @@ public class WaitingPanel extends JPanel {
 	
 	public int getParametr() throws IOException {
 		time = 0;
-		
-		/*счетчик на панели*/
 		Thread timer = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -79,7 +76,6 @@ public class WaitingPanel extends JPanel {
 		timer.start();
 		
 		answer = Constants.NOTHING;
-		/*ожидание ответа с сервера*/
 		for(;;) {
 			try { Thread.sleep(100); } catch (InterruptedException e) {}
 			boolean answer = in.readBoolean();

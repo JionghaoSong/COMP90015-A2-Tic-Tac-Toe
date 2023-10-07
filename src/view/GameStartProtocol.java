@@ -34,7 +34,6 @@ public class GameStartProtocol {
 																		createdGames,
 																		"");
 				if (choiceGame != null) {
-					/*отправка id игры*/
 					String[] split = choiceGame.split(":");
 					int id = Integer.parseInt(split[0]);
 					this.out.writeBoolean(true);

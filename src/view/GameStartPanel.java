@@ -30,7 +30,7 @@ public class GameStartPanel extends JPanel {
 		
 		nicknameLabel = new JLabel();
 		nicknameLabel.setText("You are signed in as " + nickname);
-		nicknameLabel.setBounds(0, 2, Constants.FRAME_WIDTH, 15);
+		nicknameLabel.setBounds(10, 20, Constants.FRAME_WIDTH, 15);
 		nicknameLabel.setForeground(new Color(153, 153, 255));
 		nicknameLabel.setHorizontalAlignment(JLabel.RIGHT);
 		
