@@ -8,17 +8,33 @@ LoginProtocol <get request>
 LoginProtocol <login: AAA>
 LoginProtocol <game start protocol>
 GameStartProtocol <AAA get request>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: QQQ>
+LoginProtocol <game start protocol>
+GameStartProtocol <QQQ get request>
+GameStartProtocol <new game>
+GameModel <opponent waiting>
+GameStartProtocol <connect to game>
+GameStartProtocol <game id: 1>
+GameStartProtocol <game started>
+GameModel <opponent connected>
+GameProtocol <1 move (0,0)
+GameProtocol <1 move (0,0)
+GameProtocol <2 move (1,1)
+GameProtocol <2 move (1,1)
+GameProtocol <2 move (0,1)
+GameProtocol <2 move (0,1)
+GameProtocol <2 move (2,2)
+GameProtocol <1 move (0,1)
+GameProtocol <1 move (0,1)
+GameProtocol <2 move (2,1)
+GameProtocol <2 move (2,1)
+GameProtocol <1 move (0,2)
+GameProtocol <stop>
+GameModel <end>
+GameStartProtocol <AAA get request>
+GameStartProtocol <QQQ get request>
 GameStartProtocol <get rating>
 GameStartProtocol <AAA get request>
-LoginProtocol <IOException>
-java.net.SocketException: Connection reset
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
-	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
-	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
-	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
-	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
-	at model.GameStartProtocol.getRequest(GameStartProtocol.java:35)
-	at model.LoginProtocol.run(LoginProtocol.java:92)

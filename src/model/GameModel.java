@@ -122,21 +122,26 @@ public class GameModel extends Thread {
 
 	protected void ratingRecount() {
 		// Recalculate ratings based on game outcome
-		int newCreatorRating = 0; // 初始评分为0
-		int newConnectorRating = 0; // 初始评分为0
+		int newCreatorRating = 0;
+		int newConnectorRating = 0;
 		if (gameProtocol.isCreatorWin()) {
 			// Creator wins
-			newCreatorRating = this.creator.getRating() + 5; // 每次胜利得5分
-			newConnectorRating = this.connector.getRating() - 5; // 每次失败扣5分
+			newCreatorRating = this.creator.getRating() + 5;
+			newConnectorRating = this.connector.getRating() - 5;
 		} else if (gameProtocol.isConnectorWin()) {
 			// Connector wins
-			newCreatorRating = this.creator.getRating() - 5; // 每次失败扣5分
-			newConnectorRating = this.connector.getRating() + 5; // 每次胜利得5分
+			newCreatorRating = this.creator.getRating() - 5;
+			newConnectorRating = this.connector.getRating() + 5;
 		} else if (gameProtocol.isTie()) {
 			// Tie game
-			newCreatorRating = this.creator.getRating() + 2; // 每次平局得2分
-			newConnectorRating = this.connector.getRating() + 2; // 每次平局得2分
+			newCreatorRating = this.creator.getRating() + 2;
+			newConnectorRating = this.connector.getRating() + 2;
 		}
+
+		// Ensure ratings are not negative
+		newCreatorRating = Math.max(0, newCreatorRating);
+		newConnectorRating = Math.max(0, newConnectorRating);
+
 		this.creator.setRating(newCreatorRating);
 		this.connector.setRating(newConnectorRating);
 	}
