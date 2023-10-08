@@ -31,10 +31,10 @@ public class GameStartPanel extends JPanel {
 		nicknameLabel = new JLabel();
 		nicknameLabel.setText("You are signed in as " + nickname);
 		nicknameLabel.setBounds(10, 20, Constants.FRAME_WIDTH, 15);
-		nicknameLabel.setForeground(new Color(153, 153, 255));
-		nicknameLabel.setHorizontalAlignment(JLabel.RIGHT);
+		nicknameLabel.setForeground(new Color(204, 102, 0));
+		nicknameLabel.setHorizontalAlignment(JLabel.LEFT);
 		
-		createButton = new JButton("Create new game");
+		createButton = new JButton("New Game?");
 		createButton.setBounds(130, 50, 240, 40);
 		createButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -48,7 +48,7 @@ public class GameStartPanel extends JPanel {
 			}
 		});
 		
-		connectButton = new JButton("Connect to game");
+		connectButton = new JButton("Join a Game");
 		connectButton.setBounds(130, 105, 240, 40);
 		connectButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -63,29 +63,15 @@ public class GameStartPanel extends JPanel {
 				}
 			}
 		});
-		
-		signOutButton = new JButton("Sign out");
-		signOutButton.setBounds(130, 160, 240, 40);
-		signOutButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					gameStartProtocol.send("sign out");
-					answer = Constants.SIGN_OUT;
-				} catch (IOException err) {
-					System.err.println("GameStartProtocol <signOutButton>");
-					err.printStackTrace();
-				}
-			}
-		});
-		
-		ratingButton = new JButton("Rating");
-		ratingButton.setBounds(130, 215, 240, 40);
+
+		ratingButton = new JButton("Warrior Level");
+		ratingButton.setBounds(130, 160, 240, 40);
 		ratingButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String ratingList = gameStartProtocol.send("get rating");
-					
-					JLabel info = new JLabel("<Nickname>: <games count>/<rating>");
+
+					JLabel info = new JLabel("Username: Turns / Rating");
 					info.setBounds(2, 2, 300, 20);
 					
 					JTextArea ratingArea = new JTextArea(ratingList);
@@ -98,8 +84,8 @@ public class GameStartPanel extends JPanel {
 					ratingScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 					ratingScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 					
-					JButton closeButton = new JButton("Go to back");
-					closeButton.setBounds(380, 2, 120, 25);
+					JButton closeButton = new JButton("Go back");
+					closeButton.setBounds(410, 260, 100, 25);
 					closeButton.addActionListener(new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent e) {
@@ -114,6 +100,20 @@ public class GameStartPanel extends JPanel {
 					updateUI();
 				} catch (IOException err) {
 					System.err.println("GameStartProtocol <ratingButton>");
+					err.printStackTrace();
+				}
+			}
+		});
+
+		signOutButton = new JButton("Sign out");
+		signOutButton.setBounds(130, 215, 240, 40);
+		signOutButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					gameStartProtocol.send("sign out");
+					answer = Constants.SIGN_OUT;
+				} catch (IOException err) {
+					System.err.println("GameStartProtocol <signOutButton>");
 					err.printStackTrace();
 				}
 			}

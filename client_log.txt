@@ -14,21 +14,15 @@ GameFrame <open figure choice panel>
 GameFrame <winnerCheck()>
 GameFrame <start game protocol>
 GameProtocol <get coordinate>
-Cell <put opponent (0, 2)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-Cell <put move (0, 0)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <get coordinate>
-Cell <put opponent (1, 2)>
+Cell <put opponent (0, 0)>
 GameProtocol <send coordinate>
 GameProtocol <get answer to can put>
 GameProtocol <can't to put>
 Cell <put move (2, 2)>
+GameProtocol <send coordinate>
+GameProtocol <get answer to can put>
 GameProtocol <get coordinate>
-Cell <put opponent (2, 1)>
+Cell <put opponent (0, 2)>
 GameProtocol <send coordinate>
 GameProtocol <get answer to can put>
 GameProtocol <can't to put>
@@ -36,31 +30,46 @@ Cell <put move (2, 0)>
 GameProtocol <send coordinate>
 GameProtocol <get answer to can put>
 GameProtocol <get coordinate>
-Cell <put opponent (1, 0)>
+GameProtocol <opponent win>
+GameProtocol <stop>
+GameFrame <open main menu>
+Cell <put opponent (0, 1)>
+GameFrame <winner found>
+GameFrame <stop game protocol>
+GameStartProtocol <new game>
+GameFrame <open opponent waiting panel>
+WaitingPanel <opponent found>
+GameFrame <opponent found>
+GameFrame <open figure choice panel>
+GameFrame <winnerCheck()>
+GameFrame <start game protocol>
 GameProtocol <send coordinate>
 GameProtocol <get answer to can put>
 GameProtocol <can't to put>
-Cell <put move (0, 1)>
+Cell <put move (2, 2)>
+GameProtocol <get coordinate>
+Cell <put opponent (0, 0)>
 GameProtocol <send coordinate>
 GameProtocol <get answer to can put>
+GameProtocol <can't to put>
+Cell <put move (2, 1)>
+GameProtocol <send coordinate>
+GameProtocol <get answer to can put>
+GameProtocol <get coordinate>
+Cell <put opponent (0, 1)>
+GameProtocol <send coordinate>
+GameProtocol <get answer to can put>
+GameProtocol <win>
+GameProtocol <stop>
+GameFrame <open main menu>
+Cell <put move (2, 0)>
+GameFrame <winner found>
+GameFrame <stop game protocol>
+eProtocol <get answer to can put>
 GameProtocol <get coordinate>
 GameProtocol <opponent win>
 GameProtocol <stop>
 GameFrame <open main menu>
-Cell <put opponent (1, 1)>
-GameFrame <winner found>
-GameFrame <stop game protocol>
-GameStartProtocol <logout>
-GameFrame <logout>
-GameFrame <open login panel>
-Cell <put move (1, 1)>
 GameFrame <winner found>
 GameFrame <stop game protocol>
 GameStartProtocol <get rating>
-GameFrame <rating>
-GameFrame <open main menu>
-GameStartProtocol <logout>
-GameFrame <logout>
-GameFrame <open login panel>
-LoginPanel <registration button pressed>
-LoginPanel <incorrect input>
