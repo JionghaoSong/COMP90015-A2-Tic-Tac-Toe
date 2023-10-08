@@ -120,33 +120,6 @@ public class GameModel extends Thread {
 		return !this.isInterruptWaiting;
 	}
 
-//	protected void ratingRecount() {
-//		// Recalculate ratings based on game outcome
-//		int newCreatorRating = creator.getRating();
-//		int newConnectorRating = connector.getRating();
-//		if (gameProtocol.isCreatorWin()) {
-//			// Creator wins
-//			newCreatorRating = EloRating.toCount(this.creator.getRating(), this.connector.getRating(),
-//					EloRating.WIN, this.creator.getGamesCount());
-//			newConnectorRating = EloRating.toCount(this.connector.getRating(), this.creator.getRating(),
-//					EloRating.LOSS, this.connector.getGamesCount());
-//		} else if (gameProtocol.isConnectorWin()) {
-//			// Connector wins
-//			newCreatorRating = EloRating.toCount(this.creator.getRating(), this.connector.getRating(),
-//					EloRating.LOSS, this.creator.getGamesCount());
-//			newConnectorRating = EloRating.toCount(this.connector.getRating(), this.creator.getRating(),
-//					EloRating.WIN, this.connector.getGamesCount());
-//		} else if (gameProtocol.isTie()) {
-//			// Tie game
-//			newCreatorRating = EloRating.toCount(this.creator.getRating(), this.connector.getRating(),
-//					EloRating.TIE, this.creator.getGamesCount());
-//			newConnectorRating = EloRating.toCount(this.connector.getRating(), this.creator.getRating(),
-//					EloRating.TIE, this.connector.getGamesCount());
-//		}
-//		this.creator.setRating(newCreatorRating);
-//		this.connector.setRating(newConnectorRating);
-//	}
-
 	protected void ratingRecount() {
 		// Recalculate ratings based on game outcome
 		int newCreatorRating = 0; // 初始评分为0

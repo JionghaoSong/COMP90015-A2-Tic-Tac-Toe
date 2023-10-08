@@ -90,7 +90,7 @@ public class GameProtocol {
 		this.yCoord = -1;
 		return result;
 	}
-	
+
 	public void start() throws InterruptedException {
 		listener = new Thread(new Runnable() {
 			@Override
@@ -126,10 +126,10 @@ public class GameProtocol {
 						} else if ("timeIsOver".equals(mode)) {
 							timeUp = true;
 							break;
-						} else if ("opponent disconnected".equals(mode)) {
+						}else if ("opponent disconnected".equals(mode)) {
 							out.writeUTF("break");
 							opponentDisconnect = true;
-							JOptionPane.showMessageDialog(null, "Opponent disconnected", "", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, "Opponent disconnected. You Win!", "", JOptionPane.INFORMATION_MESSAGE);
 							break;
 						} else if ("tie".equals(mode)) {
 							JOptionPane.showMessageDialog(null, "Tie", "", JOptionPane.INFORMATION_MESSAGE);

@@ -1,6 +1,6 @@
 TickTackToe <started>
 TickTackToe <new Client>
-Client <try to connect to servet>
+Client <try to connect to server>
 Client <connected>
 TickTackToe <new GameFrame>
 GameFrame <start game>
@@ -8,68 +8,4 @@ GameFrame <open login panel>
 LoginPanel <login button pressed>
 LoginPanel <request to server = true>
 GameFrame <open main menu>
-GameStartProtocol <connect to game>
-GameFrame <connect to game>
-GameFrame <open figure choice panel>
-GameFrame <winnerCheck()>
-GameFrame <start game protocol>
-GameProtocol <get coordinate>
-Cell <put opponent (0, 0)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-Cell <put move (2, 2)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <get coordinate>
-Cell <put opponent (0, 2)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-Cell <put move (2, 0)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <get coordinate>
-GameProtocol <opponent win>
-GameProtocol <stop>
-GameFrame <open main menu>
-Cell <put opponent (0, 1)>
-GameFrame <winner found>
-GameFrame <stop game protocol>
-GameStartProtocol <new game>
-GameFrame <open opponent waiting panel>
-WaitingPanel <opponent found>
-GameFrame <opponent found>
-GameFrame <open figure choice panel>
-GameFrame <winnerCheck()>
-GameFrame <start game protocol>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-Cell <put move (2, 2)>
-GameProtocol <get coordinate>
-Cell <put opponent (0, 0)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-Cell <put move (2, 1)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <get coordinate>
-Cell <put opponent (0, 1)>
-GameProtocol <send coordinate>
-GameProtocol <get answer to can put>
-GameProtocol <win>
-GameProtocol <stop>
-GameFrame <open main menu>
-Cell <put move (2, 0)>
-GameFrame <winner found>
-GameFrame <stop game protocol>
-eProtocol <get answer to can put>
-GameProtocol <get coordinate>
-GameProtocol <opponent win>
-GameProtocol <stop>
-GameFrame <open main menu>
-GameFrame <winner found>
-GameFrame <stop game protocol>
 GameStartProtocol <get rating>

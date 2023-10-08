@@ -1,7 +1,7 @@
 aaa
 aaa
-15
-1
+0
+0
 abc
 abc
 0
