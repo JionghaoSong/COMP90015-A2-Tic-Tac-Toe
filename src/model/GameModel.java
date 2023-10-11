@@ -1,21 +1,13 @@
 package model;
 
+/**
+ * @author Jionghao Song 1428049
+ * @date 2023/10/11 22:20
+ */
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
-
-/*这段代码是一个Java类GameModel，它表示一个游戏模型。
-以下是该代码的主要功能：
-
-		定义了游戏模型的属性，如游戏ID、创建者、连接者、是否轮到创建者行动、是否轮到连接者行动等。
-		创建了与创建者和连接者之间的套接字连接，以便进行通信。
-		使用二维数组来表示游戏场地。
-		包含了等待对手加入游戏的逻辑，创建了一个线程来等待对手连接。
-		包含了计算玩家等级的逻辑，根据游戏结果更新玩家的等级。
-		提供了获取创建者套接字、游戏模型、连接者套接字和游戏ID的方法。
-		实现了equals方法，用于比较两个游戏模型是否相等。
-		提供了连接到游戏的方法，用于将连接者添加到游戏模型中。
-		重写了toString方法，用于返回游戏模型的字符串表示形式。*/
 
 public class GameModel extends Thread {
 	private static int id = 1;

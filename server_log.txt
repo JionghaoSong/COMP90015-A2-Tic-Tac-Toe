@@ -1,0 +1,64 @@
+Server <start>
+Server <load user list from: src/server_data/reg_user.txt>
+Server <start connect listener>
+ConnectListener <waiting...>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: QQQ>
+LoginProtocol <game start protocol>
+GameStartProtocol <QQQ get request>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: AAA>
+LoginProtocol <game start protocol>
+GameStartProtocol <AAA get request>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <get request>
+LoginProtocol <login: abc>
+LoginProtocol <game start protocol>
+GameStartProtocol <abc get request>
+GameStartProtocol <new game>
+GameModel <opponent waiting>
+GameStartProtocol <connect to game>
+GameStartProtocol <game id: 1>
+GameStartProtocol <game started>
+GameModel <opponent connected>
+GameStartProtocol <new game>
+GameModel <opponent waiting>
+ConnectListener <client connected>
+ConnectListener <waiting...>
+LoginProtocol <get request>
+LoginProtocol <login: qqq>
+LoginProtocol <game start protocol>
+GameStartProtocol <qqq get request>
+GameStartProtocol <new game>
+GameModel <opponent waiting>
+GameModel <stop opponent waiting>
+GameStartProtocol <qqq get request>
+GameStartProtocol <connect to game>
+GameStartProtocol <game id: 2>
+GameStartProtocol <game started>
+GameModel <opponent connected>
+GameProtocol <stop>
+GameModel <end>
+GameStartProtocol <abc get request>
+GameStartProtocol <AAA get request>
+GameProtocol <stop>
+GameModel <end>
+GameStartProtocol <QQQ get request>
+GameStartProtocol <qqq get request>
+Server <IOException>
+java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endAccept(NioSocketImpl.java:680)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:753)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:690)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:655)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:631)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:588)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:546)
+	at model.ConnectListener.run(ConnectListener.java:30)
+Server <stop>

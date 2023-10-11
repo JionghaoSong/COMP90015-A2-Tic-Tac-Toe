@@ -1,21 +1,12 @@
 package model;
-
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-/*
-这段代码实现了一个游戏列表的功能。它包含一个 GameList 类，
-用于管理游戏模型（GameModel）对象的集合：
-
-		构造函数 GameList()：创建一个空的游戏列表，使用 ArrayList 来存储游戏模型对象。
-		add(GameModel gameModel) 方法：将游戏模型对象添加到列表中。
-		remove(GameModel gameModel) 方法：从列表中移除指定的游戏模型对象。
-		getCount() 方法：获取列表中游戏模型对象的数量。
-		getGameModel(int id) 方法：根据给定的 ID 获取相应的游戏模型对象。
-		toString(int index) 方法：获取指定索引处游戏模型对象的字符串表示形式。
-		toString() 方法：获取整个游戏列表中所有游戏模型对象的字符串表示形式。
-*/
+/**
+ * @author Jionghao Song 1428049
+ * @date 2023/10/11 22:20
+ */
 
 
 //Game list functionality to easily add, remove, fetch and display game model objects.

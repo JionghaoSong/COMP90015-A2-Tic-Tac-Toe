@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * @author Jionghao Song 1428049
+ * @date 2023/10/11 22:20
+ */
+
 public class Constants {
 	public static final int FIELD_HEIGHT = 10; // Constant representing the height of a field
 	public static final int FIELD_WIDTH = 10; // Constant representing the width of a field

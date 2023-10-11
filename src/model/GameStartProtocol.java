@@ -1,14 +1,12 @@
 package model;
 
+/**
+ * @author Jionghao Song 1428049
+ * @date 2023/10/11 22:20
+ */
+
 import java.io.*;
 import java.net.*;
-
-/*		建立游戏协议：该类用于处理与游戏相关的协议通信。
-		处理请求：getRequest()方法用于接收和处理客户端发送的请求。根据接收到的请求类型，调用相应的方法进行处理。
-		开始新游戏：newGame()方法用于开始一个新游戏。它创建一个GameModel对象，并将其添加到游戏列表中。然后向客户端发送一个布尔值表示游戏是否成功开始。
-		连接到游戏：connectToGame()方法用于连接到现有游戏。它向客户端发送当前可用的游戏列表，并接收客户端发送的选择。如果选择有效，则将用户连接到选定的游戏，并从游戏列表中移除该游戏。
-		注销：signOut()方法用于注销用户，将用户设置为离线状态。
-		获取评级：getRating()方法用于获取用户评级。它从用户列表中获取评级列表，并将其发送给客户端。*/
 
 public class GameStartProtocol {
 	private DataInputStream in;

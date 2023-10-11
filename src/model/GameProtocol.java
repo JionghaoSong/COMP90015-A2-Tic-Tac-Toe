@@ -1,22 +1,15 @@
 package model;
 
+/**
+ * @author Jionghao Song 1428049
+ * @date 2023/10/11 22:20
+ */
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Random;
-
-/*这段代码是一个游戏协议的实现，用于处理两个玩家之间的游戏逻辑
-                GameProtocol 类是游戏协议的主类，它接收两个玩家的连接并管理游戏的进行。
-        UserListener 是一个内部类，用于处理每个玩家的输入和输出。它继承自线程类，可以在后台运行。
-        GameProtocol 类的构造函数接收两个玩家的套接字和输入输出流，并创建两个 UserListener 对象来处理玩家的输入和输出。
-        游戏使用一个二维数组 field 来表示游戏棋盘，每个元素代表一个格子的状态。
-        游戏开始时，随机确定哪个玩家先行。
-        游戏中的每个玩家轮流进行移动，通过读取输入流来获取玩家的移动指令，并根据规则判断是否合法。
-        玩家的移动会更新棋盘状态和剩余可用格子数。
-        在每次玩家移动后，会检查是否有玩家获胜或者游戏结束（平局），并向玩家发送相应的消息。
-        游戏还有一个计时器线程，每秒减少剩余时间，当时间耗尽时，会发送时间到期的消息。
-        游戏还处理玩家断开连接的情况，向对手发送玩家断开连接的消息。*/
 
 public class GameProtocol {
     private UserListener creatorListener;
