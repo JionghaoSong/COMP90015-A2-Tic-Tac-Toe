@@ -18,19 +18,10 @@ public class Cell extends JPanel {
 	private final Color BACKGROUND_COLOR = new Color(255, 255, 255);
 	private final Color BORDER_COLOR = new Color(168, 227, 6);
 	private final int BORDER_WIDTH = 1;
-	private final int WIN_BORDER_WIDTH = 3;
 	private Image image;
 	private GameProtocol gameProtocol;
 	private String figure;
 	private String opponentFigure;
-
-	public String getOpponentFigure() {
-		return opponentFigure;
-	}
-
-	public void setOpponentFigure(String opponentFigure) {
-		this.opponentFigure = opponentFigure;
-	}
 
 	public Cell(int x, int y, GameProtocol gameProtocol, String figure) {
 		this.X = x;

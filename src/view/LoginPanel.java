@@ -53,10 +53,6 @@ public class LoginPanel extends JPanel {
 		JTextField nicknameTextField = new JTextField();
 		nicknameTextField.setBounds(250, 90, 130, 20);
 
-//		JLabel nicknameNote = new JLabel("(3-8 letters)");
-//		nicknameNote.setForeground(new Color(153, 153, 255));
-//		nicknameNote.setBounds(260, 90, 220, 20);
-		
 		JLabel passwordLabel = new JLabel("Password:");
 		passwordLabel.setBounds(130, 125, 120, 20);
 		passwordLabel.setFont(labelFont);
@@ -64,11 +60,7 @@ public class LoginPanel extends JPanel {
 		JPasswordField passwordTextField = new JPasswordField();
 		passwordTextField.setBounds(250, 125, 130, 20);
 //		passwordTextField.setText("3-8 letters");
-		
-//		JLabel passwordNote = new JLabel("(3-8 letters)");
-//		passwordNote.setForeground(new Color(105, 153, 255));
-//		passwordNote.setBounds(260, 125, 220, 20);
-		
+
 		JButton loginButton = new JButton("Sign in");
 		loginButton.setBounds(270, 165, 110, 25);
 

@@ -72,15 +72,4 @@ public class Client {
 	public Socket getSocket() {
 		return clientSocket;
 	}
-
-//	public boolean isConnected() {
-//		return isConnected;
-//	}
-//	public String getIp() {
-//		return ip;
-//	}
-//
-//	public int getPort() {
-//		return port;
-//	}
 }

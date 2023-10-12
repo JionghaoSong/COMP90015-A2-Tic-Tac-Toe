@@ -14,51 +14,29 @@ LoginProtocol <get request>
 LoginProtocol <login: AAA>
 LoginProtocol <game start protocol>
 GameStartProtocol <AAA get request>
-ConnectListener <client connected>
-ConnectListener <waiting...>
-LoginProtocol <get request>
-LoginProtocol <get request>
-LoginProtocol <login: abc>
-LoginProtocol <game start protocol>
-GameStartProtocol <abc get request>
+GameStartProtocol <connect to game>
+GameStartProtocol <AAA get request>
 GameStartProtocol <new game>
 GameModel <opponent waiting>
 GameStartProtocol <connect to game>
 GameStartProtocol <game id: 1>
 GameStartProtocol <game started>
 GameModel <opponent connected>
-GameStartProtocol <new game>
-GameModel <opponent waiting>
-ConnectListener <client connected>
-ConnectListener <waiting...>
-LoginProtocol <get request>
-LoginProtocol <login: qqq>
-LoginProtocol <game start protocol>
-GameStartProtocol <qqq get request>
-GameStartProtocol <new game>
-GameModel <opponent waiting>
-GameModel <stop opponent waiting>
-GameStartProtocol <qqq get request>
-GameStartProtocol <connect to game>
-GameStartProtocol <game id: 2>
-GameStartProtocol <game started>
-GameModel <opponent connected>
+GameProtocol <1 move (-100,-100)
 GameProtocol <stop>
 GameModel <end>
-GameStartProtocol <abc get request>
 GameStartProtocol <AAA get request>
-GameProtocol <stop>
-GameModel <end>
+GameStartProtocol <AAA get request>
 GameStartProtocol <QQQ get request>
-GameStartProtocol <qqq get request>
-Server <IOException>
-java.net.SocketException: Socket closed
-	at java.base/sun.nio.ch.NioSocketImpl.endAccept(NioSocketImpl.java:680)
-	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:753)
-	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:690)
-	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:655)
-	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:631)
-	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:588)
-	at java.base/java.net.ServerSocket.accept(ServerSocket.java:546)
-	at model.ConnectListener.run(ConnectListener.java:30)
-Server <stop>
+LoginProtocol <IOException>
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1019)
+	at java.base/java.io.DataInputStream.readUnsignedShort(DataInputStream.java:334)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:583)
+	at java.base/java.io.DataInputStream.readUTF(DataInputStream.java:558)
+	at model.GameStartProtocol.getRequest(GameStartProtocol.java:33)
+	at model.LoginProtocol.run(LoginProtocol.java:91)

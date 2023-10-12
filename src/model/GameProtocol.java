@@ -41,20 +41,14 @@ public class GameProtocol {
         creatorWin = false;
         connectorWin = false;
 
-        Random rand = new Random();
-    /*int res = rand.nextInt(2);
-    if (res == 1) {
-        isCreatorMove = true;
-    } else {
-        isConnectorMove = true;
-    }*/
+        new Random();
 
         // Create UserListener objects to handle input/output for each player
         creatorListener = new UserListener(creatorIn, creatorOut, connectorIn, connectorOut, 1, isCreatorMove, creator);
         connectorListener = new UserListener(connectorIn, connectorOut, creatorIn, creatorOut, 2, isConnectorMove, connector);
 
         // Initialize game board and remaining free cells
-        field = new int[10][10];
+        field = new int[3][3];
         freeCells = 9;
         time = 20;
 
@@ -224,10 +218,6 @@ public class GameProtocol {
 
     public boolean isTie() {
         return tie;
-    }
-
-    public int getFreeCells() {
-        return freeCells;
     }
 
     private class UserListener extends Thread {

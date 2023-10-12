@@ -152,11 +152,4 @@ public class GameStartPanel extends JPanel {
         g.drawImage(image, 0, 0, this);
     }
 
-	public int getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(int answer) {
-		this.answer = answer;
-	}
 }

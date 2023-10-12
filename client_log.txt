@@ -8,51 +8,19 @@ GameFrame <open login panel>
 LoginPanel <login button pressed>
 LoginPanel <request to server = true>
 GameFrame <open main menu>
-GameStartProtocol <new game>
-GameFrame <open opponent waiting panel>
-WaitingPanel <opponent found>
-GameFrame <opponent found>
+GameStartProtocol <connect to game>
+GameFrame <connect to game>
 GameFrame <open figure choice panel>
 GameProtocol <send choice>
-GameFrame <winnerCheck()>
-GameFrame <stGameFrame <open figuGameProtocol <get time>
-GameProtocol <get auto>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-GameProtocol <get coordinate>
-Cell <put opponent (0, 0)>
-GameProtocol <get auto>
-GameProtocol <get answer to can put>
-GameProtocol <can't to put>
-GamGameProtocol <get coordinateCell <put opponent (0, 1)>
-GamGameProtocol <get autoGamGameProtocol <get coordinate>
-Cell <put opponent (0, 2)>GaGameProtocol <get auto>
-GameProtocol <get coordinate>
-Cell <put opponent (1, 0)>GaGameProtocol <get auto>
-GameProtocol <get coordinate>
-Cell <put opponent (1, 1)>
-GameProtocol <get auto>
-GameProtocol <get coordinate>
-Cell <put opponent (1, 2)>
-GameProtocol <get auto>
-GameProtocol <get coordinate>
-GameProtocol <opponent win>
+GameProtocol <send message>
+GamePrGameFrame <open figure choice panel>
+GameProtocol <send choice>
+GameFrame <winnGameProtocol <get time>
 GameProtocol <stop>
 GameFrame <winner found>
 GameFrame <stop game protocol>
-Cell <put opponent (2, 0)>
-an't to put>
-GameProtocol <get coordinate>
-Cell <put opponent (1, 2)>
-GameProtocol <get auto>
-GameProtocol <get answer to can put>
-GameProtocol <win>
-GameProtocol <stop>
+GameFrame <open main menu>
+rotocol <stop>
 GameFrame <winner found>
 GameFrame <stop game protocol>
-uto>
-GameProtocol <get answer to can put>
-GameProtocol <win>
-GameProtocol <stop>
-GameFrame <winner found>
-GameFrame <stop game protocol>
+GameFrame <open main menu>

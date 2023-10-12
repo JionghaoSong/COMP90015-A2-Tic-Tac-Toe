@@ -159,22 +159,6 @@ public class GameModel extends Thread {
 	}
 
 	/**
-	 * Get the socket of the creator.
-	 * @return the socket of the creator.
-	 */
-	public Socket getCreatorSocket() {
-		return this.creatorSocket;
-	}
-
-	/**
-	 * Get the current game model.
-	 * @return the game model.
-	 */
-	public GameModel getGameModel() {
-		return this;
-	}
-
-	/**
 	 * Check if the game can start.
 	 * @return true if the connector is not null and waiting is not interrupted, false otherwise.
 	 */
@@ -183,14 +167,6 @@ public class GameModel extends Thread {
 			return true;
 		}
 		return false;
-	}
-
-	/**
-	 * Get the socket of the connector.
-	 * @return the socket of the connector.
-	 */
-	public Socket getConnectorSocket() {
-		return this.connectorSocket;
 	}
 
 	/**

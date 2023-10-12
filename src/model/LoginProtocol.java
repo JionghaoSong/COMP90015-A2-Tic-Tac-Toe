@@ -8,16 +8,6 @@ package model;
 import java.io.*;
 import java.net.*;
 
-/*LoginProtocol类的功能如下：该类负责处理用户登录和注册的验证逻辑，并通过创建GameStartProtocol对象提供游戏协议的通信功能。
-
-		用户登录验证：isCanLogin()方法用于验证用户登录。根据提供的昵称和密码，在用户列表中查找匹配的用户。如果找到匹配用户且该用户不在线，则将用户设置为在线状态，并返回登录成功的标志。
-					否则，返回登录失败的标志和相应的错误消息。
-		用户注册验证：isCanReg()方法用于验证用户注册。检查用户列表中是否已存在具有相同昵称的用户。如果存在相同昵称的用户，则返回注册失败的标志和相应的错误消息。
-					否则，将用户添加到用户列表中，并将用户设置为在线状态，返回注册成功的标志。
-		处理请求：run()方法作为线程的运行方法，用于接收和处理客户端发送的请求。根据接收到的请求类型（登录或注册），调用相应的验证方法进行处理。
-				如果验证成功，则创建一个GameStartProtocol对象，与客户端进行游戏协议通信。*/
-
-
 	public class LoginProtocol extends Thread {
 		private DataInputStream in;
 		private DataOutputStream out;

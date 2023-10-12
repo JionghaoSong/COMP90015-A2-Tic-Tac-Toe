@@ -46,16 +46,6 @@ public class GameProtocol {
 		this.out = new DataOutputStream(socket.getOutputStream());
 		System.out.println(in.readUTF());
 		System.out.println(in.readUTF());
-		/*boolean isFirstMove = in.readBoolean();
-		if (isFirstMove) {
-			JOptionPane.showMessageDialog(null, "You move", "", JOptionPane.INFORMATION_MESSAGE);
-		} else {
-			JOptionPane.showMessageDialog(null, "Opponent move", "", JOptionPane.INFORMATION_MESSAGE);
-		}*/
-	}
-
-	public boolean isEndQuit() {
-		return endQuit;
 	}
 
 	public void setEndQuit(boolean endQuit) {
@@ -64,10 +54,6 @@ public class GameProtocol {
 
 	public String getChoice() {
 		return choice;
-	}
-
-	public void setChoice(String choice) {
-		this.choice = choice;
 	}
 
 	public void sendTime(int message) throws IOException {

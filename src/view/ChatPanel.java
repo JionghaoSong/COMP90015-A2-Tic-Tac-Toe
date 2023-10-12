@@ -70,35 +70,9 @@ public class ChatPanel extends JPanel {
 				}
 			}
 		});
-		
-		Font font = new Font(null, Font.BOLD, 20);
-		
-//		this.time = 598;
-//
-//		this.timeLabel = new JLabel();
-//		this.timeLabel.setBounds(5, 270, 100, 30);
-//		this.timeLabel.setFont(font);
-		
-//		this.timer = new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				timeLabel.setText("00:20");
-//				updateUI();
-//				for (int i = 0; i < 21; i++) {
-//					try { Thread.sleep(1000); } catch (InterruptedException e) {}
-//					int min = time / 60;
-//					int sec = time % 60;
-//					if (sec < 10) {
-//						timeLabel.setText(min + ":0" + sec);
-//					} else {
-//						timeLabel.setText(min + ":" + sec);
-//					}
-//					time--;
-//				}
-//			}
-//		});
-//		this.timer.start();
-		
+
+		new Font(null, Font.BOLD, 20);
+
         super.setLayout(null);
 		super.add(dialogScrollPane);
 		super.add(inputScrollPane);
